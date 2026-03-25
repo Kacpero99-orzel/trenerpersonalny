@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Trener personalny – indywidualne treningi 1:1 i online. Schudnij, zbuduj sylwetkę, poczuj się lepiej. Umów darmową konsultację już dziś.">
+<meta name="keywords" content="trener personalny, treningi personalne, odchudzanie, plan treningowy, plan dietetyczny, trening online">
+<title>Trener Personalny | Zmień swoje życie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --dark3: #222222;
+    --white: #f5f0eb;
+    --white2: #e8e0d5;
+    --red: #e63329;
+    --red-dark: #b5261d;
+    --red-glow: rgba(230, 51, 41, 0.15);
+    --gray: #888880;
+    --gray-light: #555550;
+    --border: rgba(245,240,235,0.08);
+    --border-red: rgba(230,51,41,0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+
+  .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  .sticky-cta a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border-radius: 50px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+
+  .sticky-cta .wa {
+    background: #25D366;
+    color: #fff;
+  }
+
+  .sticky-cta .wa:hover {
+    background: #1fb855;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(37,211,102,0.35);
+  }
+
+  .sticky-cta .phone {
+    background: var(--red);
+    color: #fff;
+  }
+
+  .sticky-cta .phone:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(230,51,41,0.35);
+  }
+
+  .sticky-cta .icon { font-size: 1.1rem; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--red); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--red) !important;
+    color: #fff !important;
+    padding: 9px 22px;
+    border-radius: 3px;
+  }
+
+  .nav-cta:hover { background: var(--red-dark) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--red);
+    color: #fff;
+    padding: 16px 36px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(230,51,41,0.3);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    padding: 15px 34px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(245,240,235,0.3);
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--white);
+    background: rgba(245,240,235,0.05);
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 5%; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    margin-top: 12px;
+  }
+
+  .red-line {
+    width: 50px;
+    height: 3px;
+    background: var(--red);
+    margin: 18px auto 0;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(230,51,41,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(230,51,41,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .hero-number {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(120px, 20vw, 280px);
+    color: rgba(245,240,235,0.03);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--red);
+  }
+
+  .hero-h1 {
+    font-size: clamp(3.5rem, 10vw, 8.5rem);
+    line-height: 0.92;
+    margin-bottom: 30px;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  .hero-h1 .line-red { color: var(--red); }
+  .hero-h1 .line-outline {
+    -webkit-text-stroke: 2px var(--white);
+    color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--white2);
+    max-width: 520px;
+    margin-bottom: 44px;
+    line-height: 1.7;
+    animation: fadeUp 0.9s ease 0.3s both;
+  }
+
+  .hero-sub strong { color: var(--white); font-weight: 600; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 70px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.9s ease 0.5s both;
+    flex-wrap: wrap;
+  }
+
+  .stat-item { }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .stat-number span { color: var(--red); }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── PROBLEM/SOLUTION ── */
+  #problem { background: var(--dark); }
+
+  .ps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .ps-col {
+    padding: 60px;
+    position: relative;
+  }
+
+  .ps-col-problem { background: var(--dark2); }
+  .ps-col-solution { background: var(--dark3); }
+
+  .ps-col-solution::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--red);
+  }
+
+  .ps-col h3 {
+    font-size: 2rem;
+    margin: 16px 0 28px;
+  }
+
+  .ps-items { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+
+  .ps-items li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--white2);
+    line-height: 1.55;
+  }
+
+  .ps-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .ps-col-problem .ps-icon { background: rgba(230,51,41,0.15); color: var(--red); }
+  .ps-col-solution .ps-icon { background: rgba(50,200,100,0.15); color: #32c864; }
+
+  @media (max-width: 768px) {
+    .ps-grid { grid-template-columns: 1fr; }
+    .ps-col { padding: 40px 24px; }
+    .ps-col-solution::before { display: none; }
+    .ps-col-solution { border-top: 3px solid var(--red); }
+  }
+
+  /* ── OFERTA ── */
+  #oferta { background: var(--black); }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .offer-card {
+    background: var(--dark);
+    padding: 50px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .offer-card:hover { transform: translateY(-6px); }
+
+  .offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+
+  .offer-card:hover::before { background: var(--red); }
+
+  .offer-card.featured {
+    background: var(--dark2);
+    border: 1px solid var(--border-red);
+  }
+
+  .offer-card.featured::before { background: var(--red); }
+
+  .offer-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+  }
+
+  .offer-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--red-glow);
+    border: 1px solid var(--border-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+
+  .offer-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  .offer-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+
+  .offer-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .offer-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--white2);
+  }
+
+  .offer-benefits li::before {
+    content: '→';
+    color: var(--red);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 960px) {
+    .offer-grid { grid-template-columns: 1fr; }
+    .offer-card:hover { transform: none; }
+  }
+
+  /* ── USP ── */
+  #usp { background: var(--dark); }
+
+  .usp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  .usp-item {
+    background: var(--black);
+    padding: 50px 44px;
+    position: relative;
+  }
+
+  .usp-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 44px;
+    width: 40px;
+    height: 2px;
+    background: var(--red);
+  }
+
+  .usp-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: -10px;
+  }
+
+  .usp-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    margin-top: 6px;
+  }
+
+  .usp-item p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .usp-grid { grid-template-columns: 1fr; }
+    .usp-item { padding: 36px 24px; }
+    .usp-item::after { left: 24px; }
+  }
+
+  /* ── EFEKTY ── */
+  #efekty { background: var(--black); overflow: hidden; }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin-bottom: 60px;
+  }
+
+  .result-card {
+    background: var(--dark);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .result-card::before {
+    content: attr(data-bg);
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 7rem;
+    color: rgba(245,240,235,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .result-tag {
+    display: inline-block;
+    background: var(--red-glow);
+    border: 1px solid var(--border-red);
+    color: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+
+  .result-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+
+  .result-card p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 960px) {
+    .results-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── OPINIE ── */
+  #opinie { background: var(--dark); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .review-card {
+    background: var(--black);
+    padding: 44px 36px;
+    position: relative;
+  }
+
+  .stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+
+  .stars span { color: #f5a623; font-size: 1rem; }
+
+  .review-text {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--white2);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .review-text::before {
+    content: '"';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--red-glow);
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    color: var(--red);
+  }
+
+  .author-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+  }
+
+  .author-detail {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 960px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── PROCES ── */
+  #proces { background: var(--black); }
+
+  .steps-container {
+    display: flex;
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-container::before {
+    content: '';
+    position: absolute;
+    top: 38px;
+    left: 38px;
+    right: 38px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--border) 100%);
+    z-index: 0;
+  }
+
+  .step-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--gray);
+    margin-bottom: 24px;
+    transition: all 0.3s;
+  }
+
+  .step-item:first-child .step-circle {
+    border-color: var(--red);
+    color: var(--red);
+    box-shadow: 0 0 20px var(--red-glow);
+  }
+
+  .step-item:hover .step-circle {
+    border-color: var(--red);
+    color: var(--red);
+  }
+
+  .step-icon { font-size: 1.5rem; }
+
+  .step-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .step-item p {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .steps-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .steps-container::before { display: none; }
+    .step-item { align-items: flex-start; text-align: left; flex-direction: row; gap: 20px; }
+    .step-circle { flex-shrink: 0; margin-bottom: 0; width: 56px; height: 56px; }
+  }
+
+  /* ── CTA FINALNE ── */
+  #kontakt {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #kontakt::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(230,51,41,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-final-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-final-inner h2 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin: 16px 0 20px;
+    line-height: 0.95;
+  }
+
+  .cta-final-inner p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--white2);
+    max-width: 500px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+
+  .contact-form {
+    background: var(--black);
+    border: 1px solid var(--border);
+    padding: 48px;
+    text-align: left;
+    margin-bottom: 36px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 14px 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--red);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--gray-light);
+  }
+
+  .form-group select { appearance: none; cursor: pointer; }
+  .form-full { grid-column: 1 / -1; }
+
+  .form-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover {
+    background: var(--red-dark);
+    box-shadow: 0 8px 30px rgba(230,51,41,0.3);
+  }
+
+  .contact-alternatives {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .contact-form { padding: 28px 20px; }
+  }
+
+  /* ── FAQ ── */
+  #faq { background: var(--black); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--dark);
+    padding: 36px 32px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width 0.3s ease;
+  }
+
+  .faq-item:hover::after { width: 100%; }
+
+  .faq-question {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .faq-q-icon {
+    color: var(--red);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .faq-answer {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+    padding-left: 26px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark2);
+    padding: 40px 5%;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .footer-logo span { color: var(--red); }
+
+  .footer-tagline {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--gray);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--gray-light);
+    font-weight: 300;
+  }
+
+  /* ── MID CTA BANNER ── */
+  .cta-banner {
+    background: var(--red);
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .cta-banner p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .cta-banner .btn-primary {
+    background: #fff;
+    color: var(--red);
+  }
+
+  .cta-banner .btn-primary:hover {
+    background: var(--white2);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  }
+
+  /* ── SCROLL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <a href="tel:+48000000000" class="phone">
+    <span class="icon">📞</span>
+    <span>Zadzwoń</span>
+  </a>
+  <a href="https://wa.me/48000000000" class="wa" target="_blank">
+    <span class="icon">💬</span>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#hero" class="nav-logo">FORMA<span>PRO</span></a>
+  <ul class="nav-links">
+    <li><a href="#oferta">Oferta</a></li>
+    <li><a href="#efekty">Efekty</a></li>
+    <li><a href="#opinie">Opinie</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#kontakt" class="nav-cta">Darmowa konsultacja</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-number">01</div>
+
+  <div class="hero-content">
+    <div class="hero-label label">Trener Personalny</div>
+    <h1 class="hero-h1">
+      ZMIEŃ<br>
+      <span class="line-red">SWOJE</span><br>
+      <span class="line-outline">CIAŁO</span>
+    </h1>
+    <p class="hero-sub">
+      Indywidualne treningi personalne i plany dopasowane <strong>tylko do Ciebie</strong> — nie do tysięcy innych. Zacznij odchudzanie, buduj sylwetkę i odzyskaj energię.
+    </p>
+    <div class="hero-ctas">
+      <a href="#kontakt" class="btn-primary">🎯 Umów darmową konsultację</a>
+      <a href="#oferta" class="btn-secondary">Zobacz metody →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">200<span>+</span></div>
+        <div class="stat-label">Zadowolonych klientów</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5<span>★</span></div>
+        <div class="stat-label">Średnia ocena</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8<span>+</span></div>
+        <div class="stat-label">Lat doświadczenia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100<span>%</span></div>
+        <div class="stat-label">Indywidualne podejście</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM → ROZWIĄZANIE -->
+<section id="problem">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Rozumiem Twój problem</div>
+      <h2>DLACZEGO NIE WIDZISZ EFEKTÓW?</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="ps-grid">
+      <div class="ps-col ps-col-problem reveal">
+        <div class="label">Problem</div>
+        <h3>CO BLOKUJE TWÓJ POSTĘP</h3>
+        <ul class="ps-items">
+          <li>
+            <div class="ps-icon">✕</div>
+            <span>Ćwiczysz od miesięcy, ale waga stoi w miejscu — brakuje efektów, które napędzałyby do dalszego działania.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✕</div>
+            <span>Masz chaos z planami z internetu — każdy mówi coś innego, nie wiesz od czego zacząć i czy robisz to dobrze.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✕</div>
+            <span>Motywacja opada po 2 tygodniach — bez wsparcia i systemu łatwo się poddać, gdy nie widać rezultatów.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✕</div>
+            <span>Treningi są przypadkowe i nieefektywne — tracisz czas na ćwiczenia, które nie przybliżają Cię do celu.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✕</div>
+            <span>Nie wiesz, co jeść — diety „cud" nie działają, a zdrowe odżywianie wydaje się skomplikowane.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="ps-col ps-col-solution reveal reveal-delay-2">
+        <div class="label">Rozwiązanie</div>
+        <h3>JAK PRACUJEMY RAZEM</h3>
+        <ul class="ps-items">
+          <li>
+            <div class="ps-icon">✓</div>
+            <span>Plan treningowy stworzony <strong>specjalnie dla Ciebie</strong> — Twoje cele, możliwości i styl życia w centrum.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✓</div>
+            <span>Żadnych eksperymentów — każdy trening jest przemyślany, bezpieczny i prowadzi do konkretnych wyników.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✓</div>
+            <span>Stałe wsparcie i kontrola postępów — nie zostaję sam, czuwam nad każdym krokiem i reaguję na zmiany.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✓</div>
+            <span>Motywacja i system — dzięki strukturze i regularnym check-inom utrzymujesz konsekwencję przez długie miesiące.</span>
+          </li>
+          <li>
+            <div class="ps-icon">✓</div>
+            <span>Plan dietetyczny bez głodowania — proste, smaczne i realistyczne podejście do odżywiania.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Co oferuję</div>
+      <h2>WYBIERZ SWOJĄ ŚCIEŻKĘ</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card reveal">
+        <div class="offer-icon">🏋️</div>
+        <div class="label">Trening personalny</div>
+        <h3>TRENING 1:1</h3>
+        <p class="offer-desc">Intensywne, efektywne treningi pod moim okiem w siłowni lub innym miejscu. Pełna koncentracja na Tobie i Twoim ciele.</p>
+        <ul class="offer-benefits">
+          <li>Indywidualny plan dopasowany do celów</li>
+          <li>Korekta techniki ćwiczeń na żywo</li>
+          <li>Maksymalna efektywność każdego treningu</li>
+          <li>Stała motywacja i wsparcie</li>
+          <li>Możliwość treningu w dowolnym miejscu</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Zapytaj o termin</a>
+      </div>
+
+      <div class="offer-card featured reveal reveal-delay-1">
+        <div class="offer-badge">Najpopularniejszy</div>
+        <div class="offer-icon">💻</div>
+        <div class="label">Trening zdalny</div>
+        <h3>TRENING ONLINE</h3>
+        <p class="offer-desc">Osiągnij wyniki bez wychodzenia z domu. Prowadzę Cię zdalnie z pełnym wsparciem — trening gdzie i kiedy chcesz.</p>
+        <ul class="offer-benefits">
+          <li>Plan treningowy na aplikacji lub PDF</li>
+          <li>Cotygodniowe wideo check-iny</li>
+          <li>Szybki kontakt przez WhatsApp / Messenger</li>
+          <li>Dostosowanie do domowego sprzętu</li>
+          <li>Miesięczna analiza postępów ze zdjęciami</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Zacznij online</a>
+      </div>
+
+      <div class="offer-card reveal reveal-delay-2">
+        <div class="offer-icon">📋</div>
+        <div class="label">Kompleksowy plan</div>
+        <h3>PLAN TRENINGOWO-DIETETYCZNY</h3>
+        <p class="offer-desc">Kompletny, spersonalizowany plan — zarówno treningowy, jak i dietetyczny — stworzony po szczegółowym wywiadzie.</p>
+        <ul class="offer-benefits">
+          <li>Szczegółowy wywiad i analiza celów</li>
+          <li>Plan treningowy na 4–12 tygodni</li>
+          <li>Jadłospis dostosowany do preferencji</li>
+          <li>Wskazówki dotyczące regeneracji</li>
+          <li>Możliwość modyfikacji planu</li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Zamów plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA BANNER -->
+<div class="cta-banner">
+  <h2>NIE CZEKAJ NA LEPSZY MOMENT</h2>
+  <p>Darmowa konsultacja trwa 30 minut — bez zobowiązań, bez presji.</p>
+  <a href="#kontakt" class="btn-primary">🎯 Umów się teraz — to nic nie kosztuje</a>
+</div>
+
+<!-- USP -->
+<section id="usp">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Dlaczego to działa</div>
+      <h2>MOJA METODA DZIAŁA, BO JEST TWOJA</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-item reveal">
+        <div class="usp-num">01</div>
+        <h3>100% INDYWIDUALNE PODEJŚCIE</h3>
+        <p>Każdy klient jest inny — masz inne ciało, cel, historię zdrowotną i styl życia. Nie stosuję gotowych szablonów. Każdy plan tworzę od zera, specjalnie dla Ciebie.</p>
+      </div>
+      <div class="usp-item reveal reveal-delay-1">
+        <div class="usp-num">02</div>
+        <h3>PLAN DOPASOWANY DO TWOJEGO ŻYCIA</h3>
+        <p>Uwzględniam Twój harmonogram, preferencje, sprzęt i możliwości. Nie musisz zmieniać swojego trybu życia — zmieniamy go razem, małymi krokami.</p>
+      </div>
+      <div class="usp-item reveal">
+        <div class="usp-num">03</div>
+        <h3>STAŁA KONTROLA POSTĘPÓW</h3>
+        <p>Regularne pomiary, zdjęcia postępów, analiza wyników — zawsze wiem, co działa, a co wymaga korekty. Reaguję szybko, zanim stracisz motywację.</p>
+      </div>
+      <div class="usp-item reveal reveal-delay-1">
+        <div class="usp-num">04</div>
+        <h3>ŻADNYCH LOSOWYCH PLANÓW Z INTERNETU</h3>
+        <p>Plany „na 8 tygodni" z YouTube nie znają Ciebie. Mój plan zna Cię w 100%. To różnica między marnowaniem czasu a naprawdę szybkimi efektami.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EFEKTY -->
+<section id="efekty">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Realne przemiany</div>
+      <h2>EFEKTY MOICH KLIENTÓW</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="results-grid">
+      <div class="result-card reveal" data-bg="KG">
+        <div class="result-tag">Redukcja wagi</div>
+        <div class="result-number">-18 kg</div>
+        <h3>W 4 MIESIĄCE</h3>
+        <p>Klientka pracująca zdalnie, bez wcześniejszego doświadczenia z siłownią. Schudła 18 kg i zbudowała nawyk aktywności — bez głodowania i bez wyczerpujących treningów.</p>
+      </div>
+      <div class="result-card reveal reveal-delay-1" data-bg="SYL">
+        <div class="result-tag">Budowa sylwetki</div>
+        <div class="result-number">+8 kg</div>
+        <h3>CZYSTEJ MASY</h3>
+        <p>Mężczyzna po 40-tce, który „nie wiedział jak się odżywiać". W ciągu 6 miesięcy zbudował wyraźną sylwetkę, zwiększył siłę i poczuł się pewiej w każdej sytuacji.</p>
+      </div>
+      <div class="result-card reveal reveal-delay-2" data-bg="FIT">
+        <div class="result-tag">Powrót do formy</div>
+        <div class="result-number">3x</div>
+        <h3>WZROST WYDOLNOŚCI</h3>
+        <p>Mama dwójki dzieci wracająca po przerwie. Po 3 miesiącach treningów online odzyskała energię, poprawiła kondycję i z powodzeniem ukończyła swój pierwszy bieg 10 km.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 50px;" class="reveal">
+      <p style="color: var(--gray); font-size:0.9rem; margin-bottom:24px; font-weight:300;">Twoje wyniki mogą się różnić — plan jest zawsze indywidualny.</p>
+      <a href="#kontakt" class="btn-primary">Chcę takich efektów →</a>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIE -->
+<section id="opinie">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Co mówią klienci</div>
+      <h2>PRAWDZIWE OPINIE</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Próbowałam wielu trenerów i diet, ale dopiero tutaj zobaczyłam realne efekty. Plan był dopasowany do mojego stylu życia — nie musiałam rezygnować ze wszystkiego, co lubię.</p>
+        <div class="review-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <div class="author-name">Marta K.</div>
+            <div class="author-detail">Trening online · -12 kg w 3 miesiące</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Szczerość i profesjonalizm na najwyższym poziomie. Nie ma tu „magicznych" rozwiązań — jest solidna praca, metodyczny plan i efekty, które naprawdę widać po kilku tygodniach.</p>
+        <div class="review-author">
+          <div class="author-avatar">T</div>
+          <div>
+            <div class="author-name">Tomasz R.</div>
+            <div class="author-detail">Trening 1:1 · +7 kg masy mięśniowej</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Bałam się, że jako osoba bez doświadczenia z siłownią będę tracić czas. Tutaj czuję się bezpiecznie, ćwiczenia są dobrze wytłumaczone i cały czas widać postęp.</p>
+        <div class="review-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <div class="author-name">Anna W.</div>
+            <div class="author-detail">Trening 1:1 · Początkująca, 4 miesiące</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Po urlopie macierzyńskim bałam się wrócić do aktywności. Trener był bardzo wyrozumiały, dostosował tempo do moich możliwości i teraz czuję się lepiej niż przed ciążą!</p>
+        <div class="review-author">
+          <div class="author-avatar">K</div>
+          <div>
+            <div class="author-name">Katarzyna P.</div>
+            <div class="author-detail">Trening online · Powrót po przerwie</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Kupiłem plan treningowo-dietetyczny i byłem zaskoczony, ile szczegółów uwzględnił. Jadłospis jest smaczny i realizowalny. Po raz pierwszy trzymam się planu dłużej niż tydzień.</p>
+        <div class="review-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <div class="author-name">Piotr M.</div>
+            <div class="author-detail">Plan treningowo-dietetyczny</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Zawsze mógłem napisać z pytaniem — odpowiedź przychodziła szybko i zawsze merytoryczna. To nie jest trener, który bierze pieniądze i znika. Naprawdę dba o wyniki.</p>
+        <div class="review-author">
+          <div class="author-avatar">G</div>
+          <div>
+            <div class="author-name">Grzegorz L.</div>
+            <div class="author-detail">Trening online · 6 miesięcy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section id="proces">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Jak zaczniesz</div>
+      <h2>5 KROKÓW DO EFEKTÓW</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="steps-container reveal">
+      <div class="step-item">
+        <div class="step-circle"><span class="step-icon">📩</span></div>
+        <h3>KONTAKT</h3>
+        <p>Piszesz lub dzwonisz — bez żadnych zobowiązań. Możesz też wypełnić formularz poniżej.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle"><span class="step-icon">💬</span></div>
+        <h3>KONSULTACJA</h3>
+        <p>Bezpłatna rozmowa 30 min. Omawiam Twoje cele, historię i możliwości.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle"><span class="step-icon">📋</span></div>
+        <h3>PLAN</h3>
+        <p>Tworzę indywidualny plan treningowy i dietetyczny specjalnie dla Ciebie.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle"><span class="step-icon">🏋️</span></div>
+        <h3>TRENINGI</h3>
+        <p>Zaczynasz ćwiczyć pod moim okiem — online lub 1:1. Cały czas jestem do dyspozycji.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle"><span class="step-icon">🏆</span></div>
+        <h3>EFEKTY</h3>
+        <p>Regularnie analizujemy postępy i optymalizujemy plan. Wyniki widać już po kilku tygodniach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALNE + FORMULARZ -->
+<section id="kontakt">
+  <div class="section-inner">
+    <div class="cta-final-inner">
+      <div class="label reveal">Zacznij już teraz</div>
+      <h2 class="reveal">ZACZNIJ SWOJĄ<br><span style="color:var(--red)">ZMIANĘ</span><br>JUŻ DZIŚ</h2>
+      <p class="reveal">Darmowa konsultacja 30 minut — porozmawiamy o Twoich celach i sprawdzę, jak mogę Ci pomóc. Bez presji, bez zobowiązań.</p>
+
+      <div class="contact-form reveal">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Imię i nazwisko</label>
+            <input type="text" id="name" placeholder="Jan Kowalski">
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" placeholder="+48 500 000 000">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="jan@email.com">
+          </div>
+          <div class="form-group">
+            <label for="goal">Twój główny cel</label>
+            <select id="goal">
+              <option value="">— Wybierz cel —</option>
+              <option>Schudnąć i zredukować tkankę tłuszczową</option>
+              <option>Zbudować masę mięśniową</option>
+              <option>Poprawić kondycję i zdrowie</option>
+              <option>Powrót do formy po przerwie</option>
+              <option>Inny cel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type">Forma treningu</label>
+            <select id="type">
+              <option value="">— Wybierz formę —</option>
+              <option>Trening personalny 1:1</option>
+              <option>Trening online</option>
+              <option>Plan treningowo-dietetyczny</option>
+              <option>Nie wiem jeszcze</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="experience">Doświadczenie</label>
+            <select id="experience">
+              <option value="">— Wybierz poziom —</option>
+              <option>Beginner — dopiero zaczynam</option>
+              <option>Wracam po przerwie</option>
+              <option>Ćwiczę regularnie</option>
+              <option>Zaawansowany</option>
+            </select>
+          </div>
+          <div class="form-group form-full">
+            <label for="message">Co chcesz osiągnąć? (opcjonalnie)</label>
+            <textarea id="message" rows="4" placeholder="Opisz swój cel lub sytuację..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="handleSubmit()">🎯 Wyślij — chcę darmową konsultację</button>
+      </div>
+
+      <div class="contact-alternatives reveal">
+        <a href="https://wa.me/48000000000" target="_blank" class="btn-primary" style="background:#25D366;">
+          💬 Napisz na WhatsApp
+        </a>
+        <a href="tel:+48000000000" class="btn-secondary">
+          📞 Zadzwoń teraz
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="label">Masz pytania?</div>
+      <h2>CZĘSTO ZADAWANE PYTANIA</h2>
+      <div class="red-line"></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-question"><span class="faq-q-icon">Q</span> Ile trwa współpraca?</div>
+        <p class="faq-answer">Nie ma minimalnego okresu — możemy zacząć od jednego miesiąca. Najlepsze efekty widoczne są po 2–3 miesiącach regularnej pracy, dlatego polecam pakiety kwartalne. Wszystko zależy od Twojego celu.</p>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question"><span class="faq-q-icon">Q</span> Czy muszę mieć wcześniejsze doświadczenie?</div>
+        <p class="faq-answer">Absolutnie nie! Pracuję zarówno z osobami, które nigdy nie były na siłowni, jak i z zaawansowanymi sportowcami. Plan i metody dostosowuję zawsze do aktualnego poziomu — nie ma tu miejsca na ocenianie.</p>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span class="faq-q-icon">Q</span> Czy mogę trenować zdalnie — tylko online?</div>
+        <p class="faq-answer">Tak, trening online to jedna z najpopularniejszych opcji. Możesz trenować w domu, w hotelu, w parku — gdziekolwiek jesteś. Dopasuję plan do dostępnego sprzętu lub zaproponuję ćwiczenia z własnym ciężarem ciała.</p>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question"><span class="faq-q-icon">Q</span> Ile kosztują treningi?</div>
+        <p class="faq-answer">Ceny są indywidualne i zależą od wybranej formy współpracy, intensywności oraz czasu trwania. Szczegóły omówimy podczas bezpłatnej konsultacji — dopiero wtedy, gdy poznam Twoje potrzeby, zaproponuję konkretny pakiet.</p>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span class="faq-q-icon">Q</span> Czy dostanę też plan dietetyczny?</div>
+        <p class="faq-answer">Tak — plan dietetyczny możesz zamówić jako osobny produkt lub w pakiecie z planem treningowym. Nie stosuję restrykcyjnych diet-cud. Buduję jadłospis, który da się utrzymać długoterminowo i który smakuje.</p>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question"><span class="faq-q-icon">Q</span> Jak szybko zobaczę pierwsze efekty?</div>
+        <p class="faq-answer">Pierwsze odczuwalne zmiany (więcej energii, lepsze samopoczucie) pojawiają się zazwyczaj po 2–3 tygodniach. Widoczne zmiany sylwetki — po 4–8 tygodniach przy regularności i właściwej diecie. Tempo zależy od punktu startowego i celu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">FORMA<span>PRO</span></div>
+  <div class="footer-tagline">Twój trener personalny · Treningi 1:1 i online</div>
+  <div class="footer-copy">© 2025 FormaPRO. Wszelkie prawa zastrzeżone. | Strona do personalizacji.</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit() {
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    if (!name || !phone || !email) {
+      alert('Uzupełnij imię, telefon i e-mail.');
+      return;
+    }
+    alert('Dziękuję, ' + name + '! Skontaktuję się z Tobą w ciągu 24 godzin. 🎯');
+  }
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'fixed';
+      links.style.top = '72px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'rgba(10,10,10,0.98)';
+      links.style.padding = '30px 5%';
+      links.style.gap = '24px';
+      links.style.borderBottom = '1px solid rgba(245,240,235,0.08)';
+    }
+  }
+
+  // Close mobile menu on nav link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = 'none';
+    });
+  });
+</script>
+</body>
+</html>
